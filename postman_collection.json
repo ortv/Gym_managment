@@ -1,0 +1,527 @@
+{
+  "info": {
+    "name": "Gym API - Full Collection",
+    "_postman_id": "00000000-0000-4000-8000-000000000001",
+    "description": "Collection to test all Gym management API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:3004",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Members",
+      "item": [
+        {
+          "name": "Create Member",
+          "id": "m-create-1",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fname\": \"John\",\n  \"lname\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"email\": \"john.doe@example.com\",\n  \"joinDate\": \"2025-10-21\",\n  \"membershipId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/m/members",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["m", "members"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Members",
+          "id": "m-get-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/m/members",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["m", "members"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Member by ID",
+          "id": "m-get-2",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/m/members/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["m", "members", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Members Joined By Year",
+          "id": "m-joined-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/m/members/joined/2025",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["m", "members", "joined", "2025"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Member",
+          "id": "m-put-1",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fname\": \"Jane\",\n  \"lname\": \"Doe\",\n  \"phone\": \"+1987654321\",\n  \"email\": \"jane.doe@example.com\",\n  \"joinDate\": \"2025-10-21\",\n  \"membershipId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/m/members/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["m", "members", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Member",
+          "id": "m-delete-1",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/m/members/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["m", "members", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Memberships",
+      "item": [
+        {
+          "name": "Create Membership",
+          "id": "ms-create-1",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"typeMembership\": \"Standard\",\n  \"price\": 29.99,\n  \"durationMonths\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ms/memberships",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["ms", "memberships"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Memberships",
+          "id": "ms-get-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/ms/memberships",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["ms", "memberships"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Membership by ID",
+          "id": "ms-get-2",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/ms/memberships/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["ms", "memberships", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Membership Payment By ID",
+          "id": "ms-payment-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/ms/memberships/payment/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["ms", "memberships", "payment", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Membership",
+          "id": "ms-put-1",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"typeMembership\": \"Premium\",\n  \"price\": 49.99,\n  \"durationMonths\": 3\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ms/memberships/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["ms", "memberships", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Membership",
+          "id": "ms-delete-1",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/ms/memberships/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["ms", "memberships", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Classes",
+      "item": [
+        {
+          "name": "Create Class",
+          "id": "cl-create-1",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"class_name\": \"Yoga\",\n  \"schedule\": \"Mon/Wed/Fri 07:00\",\n  \"trainer_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cl/classes",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["cl", "classes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Classes",
+          "id": "cl-get-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cl/classes",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["cl", "classes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Class by ID",
+          "id": "cl-get-2",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cl/classes/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["cl", "classes", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Classes Count By Trainer",
+          "id": "cl-count-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/cl/classes/count/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["cl", "classes", "count", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Class",
+          "id": "cl-put-1",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"class_name\": \"Pilates\",\n  \"schedule\": \"Tue/Thu 18:00\",\n  \"trainer_id\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cl/classes/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["cl", "classes", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Class",
+          "id": "cl-delete-1",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/cl/classes/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["cl", "classes", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Enrollments",
+      "item": [
+        {
+          "name": "Create Enrollment",
+          "id": "en-create-1",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"member_id\": 1,\n  \"class_id\": 1,\n  \"enrollment_date\": \"2025-10-21\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/en/enrollments",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["en", "enrollments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Enrollments",
+          "id": "en-get-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/en/enrollments",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["en", "enrollments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Enrollment by ID",
+          "id": "en-get-2",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/en/enrollments/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["en", "enrollments", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Enrollment",
+          "id": "en-put-1",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"member_id\": 1,\n  \"class_id\": 2,\n  \"enrollment_date\": \"2025-10-22\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/en/enrollments/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["en", "enrollments", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Enrollment",
+          "id": "en-delete-1",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/en/enrollments/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["en", "enrollments", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Trainers",
+      "item": [
+        {
+          "name": "Create Trainer",
+          "id": "tr-create-1",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fname\": \"Alice\",\n  \"lname\": \"Smith\",\n  \"specialty\": \"Strength\",\n  \"phone\": \"+1112223333\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/tr/trainers",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["tr", "trainers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trainers",
+          "id": "tr-get-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/tr/trainers",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["tr", "trainers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trainer by ID",
+          "id": "tr-get-2",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/tr/trainers/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["tr", "trainers", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trainers By Specialty",
+          "id": "tr-specialty-1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/tr/trainers/specialty/Strength",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["tr", "trainers", "specialty", "Strength"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Trainer",
+          "id": "tr-put-1",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fname\": \"Alice\",\n  \"lname\": \"Johnson\",\n  \"specialty\": \"Yoga\",\n  \"phone\": \"+1112223333\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/tr/trainers/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["tr", "trainers", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Trainer",
+          "id": "tr-delete-1",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/tr/trainers/1",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "3004",
+              "path": ["tr", "trainers", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
